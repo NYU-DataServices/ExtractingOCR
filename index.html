@@ -64,21 +64,10 @@
 					</ul>	
 				</section>
 				
-				<!--SLIDE 4-->
-				<section>
-					<h3>Option One (the free option): Tesseract</h3>
-					<ul>
-					<li>Download it <a href="https://github.com/tesseract-ocr/tesseract">here</a></li>
-					<li>Runs in the command line, but don't be intimidated...after install, basic command is: <pre>tesseract input-image-location output-text-location</pre></li>
-    				<li>Training must also be done through command line, and that is a little harder. See tutorial <a href="https://github.com/tesseract-ocr/tesseract/wiki/TrainingTesseract">here</a>.</li>
-					</ul><br/><br/>
-					<img src="imgs/ocr.png" width="80%"/>
-				</section>
-				
 				<!--SLIDE 5-->
 				<section>
 				<img src="imgs/abbyy.jpg" width="15%" height="15%" style="float:right; margin-left:0.5em;">
-					<h2>Option Two: ABBYY FineReader</h2>					
+					<h2>Option One: ABBYY FineReader</h2>					
 					<p>Basic specs:</p>
 					<ul>
 					<li>Mac and Windows versions. Currently, Windows interface much better.</li>
@@ -181,19 +170,40 @@
 					<ol>					
 					<li>Save the ABBYY project bundle. Go to FILE >> Save FineReader Document and save the project form time to time.</li>
 					<li>When ready to export, hit the "Save" icon at top menu bar and select out put format. Note also the dropdown options under the "Document Layout" section. Opt in or out to keep things like pictures, page numbers, headers, footers, line breaks, hyphens.</li>
-					<li>Best options: RTF (if you want the exact layout on the page, including whitespace like tabs) or TXT (if you just want text and line breaks).</li>
+					<li>Best options: RTF (if you want the exact layout on the page, especially line breaks) or TXT (if you just want text and line breaks).
 					
 					</ol>		
 					<div class='footer'>
 					</div>
 				</section>
-
-
+                                <section>
+					<h3>Option Two (the free option): Tesseract</h3>
+					<ul>
+					<li>Find documentation at <a href="https://github.com/tesseract-ocr/tesseract">here</a></li>
+					<li>Install by first loading <a href="http://brew.sh">Homebrew</a> on Mac (if you don't have it already). From terminal, type: <code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></li>
+					<li>Then type: <code>brew install tesseract</code></li></ul>
+					For Windows, check install options here: <a href="https://github.com/tesseract-ocr/tesseract/wiki/Downloads">github.com/tesseract-ocr/tesseract/wiki/Downloads</a>
+				</section>
+				<section>
+					<h3>Tesseract Overview</h3>
+					<ul>
+					<li>Works on .tiff (uncompressed) files. Use tools like <a href="https://www.imagemagick.org/script/index.php">ImageMagick</a> and <a href="https://www.ghostscript.com/">Ghostscript</a> to make conversions.</li>
+					</ul><br/><br/>
+					<img src="imgs/ocr.png" width="80%"/>
+				</section>
+				<section>
+					<h3>Running Tesseract</h3>
+					<ul>
+					<li>Runs in the command line, but don't be intimidated...basic command is: <code>tesseract input-image-location output-text-location</code></li>
+    					<li>To output to an html file with bounding boxes, use <code>tesseract input-image-location output-text-location hocr</code></li>
+					<li>Batch OCR: <code>for item in *.tif; do tesseract $item output_folder_name/$item; done</code>
+					<li>Training must also be done through command line, and that is a little harder. See tutorial at <a href="https://github.com/tesseract-ocr/tesseract/wiki/TrainingTesseract">https://github.com/tesseract-ocr/tesseract/wiki/TrainingTesseract</a>.</li></ul>
+				</section>
 				<!-- CONCLUSION SLIDE -->
 				<section>
 					<h2>Happy OCRing. Questions?</h2><br/>
 					
-					<p>Email us: <a href="mailto:victoria.steeves@nyu.edu">victoria.steeves@nyu.edu</a> & <a href="mailto:nicholas.wolf@nyu.edu">nicholas.wolf@nyu.edu</a></p>
+					<p>Email us: <a href="mailto:vicky.steeves@nyu.edu">vicky.steeves@nyu.edu</a> & <a href="mailto:nicholas.wolf@nyu.edu">nicholas.wolf@nyu.edu</a></p>
 					<p>Learn more about RDM: <a href="http://guides.nyu.edu/data_management">guides.nyu.edu/data_management</a></p>
 
 					<p>Get this presentation: <a href="http://guides.nyu.edu/data_management/resources">guides.nyu.edu/data_management/resources</a></p>
@@ -232,4 +242,4 @@
 		</script>
 	</body>
 </html>
-
+		
